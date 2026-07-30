@@ -53,9 +53,11 @@ ul {
 
 /* ===== Header ===== */
 .header {
-  background-image: url("resources/background-image.png");
+  background-color: #1e2a3a;
+  background-image: url("./resources/background-image.png");
   background-size: cover;
   background-position: center top;
+  background-repeat: no-repeat;
   height: 200px;
   display: flex;
   align-items: flex-start;
