@@ -3,108 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      rel="icon"
-      href="resources/favicon.ico"
-      type="image/x-icon"
-      sizes="96x96"
-    />
-
-    <title>Device Shop Checkout | devChallenges.io</title>
-
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-      }
-
-      .author-info {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 16px;
-        color: rgb(55, 65, 81);
-      }
-
-      .author-info a {
-        text-decoration: none;
-      }
-    </style>
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Apple Shop Checkout | Flexbox</title>
   </head>
   <body>
-    <!--     
-    Checkout
-    
-    3 items
-    
-    iPhone 12 Pro
-    
-    Golden
-    
-    $999.00
-    
-    x 1
-    
-    Apple Watch
-    
-    Blue
-    
-    $399.00
-    
-    iMac
-    
-    Green
-    
-    $1199.00
-    
-    Enter coupon code
-    
-    Apply Coupon
-    
-    Sub total
-    
-    $2597.00
-    
-    Tax
-    
-    $623.28
-    
-    Total
-    
-    $3220.28
-    
-    Contact Information
-    
-    First & Last name
-    
-    Enter first & last name
-    
-    Email Address
-    
-    Enter email address
-    
-    Country
-    
-    Finland
-    
-    Postal Code
-    
-    00270
-    
-    Continue
-     -->
+    <header class="header">
+      <h1>Checkout</h1>
+      <span class="badge">3 ITEMS</span>
+    </header>
 
-    <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
-        >devChallenges.io</a
-      >.
-    </div>
+    <main class="checkout-container">
+      <!-- Product Summary Section -->
+      <section class="summary" aria-label="Order summary">
+        <ul class="product-list">
+          <li class="product">
+            <div class="product-image">
+              <img src="resources/Gold.png" srcset="resources/Gold.png 1x, resources/Gold@2x.png 2x" alt="iPhone 12 Pro Golden" />
+            </div>
+            <div class="product-details">
+              <div class="product-top">
+                <div class="product-info">
+                  <h2 class="product-name">iPhone 12 Pro</h2>
+                  <p class="product-color">Golden</p>
+                </div>
+                <p class="product-price">$999.00</p>
+              </div>
+              <div class="product-bottom">
+                <span class="product-qty">x 1</span>
+                <button type="button" class="remove-btn" aria-label="Remove iPhone 12 Pro">
+                  <img src="resources/close-icon.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="product">
+            <div class="product-image">
+              <img src="resources/Apple-watch.png" srcset="resources/Apple-watch.png 1x, resources/Apple-watchx2.png 2x" alt="Apple Watch Blue" />
+            </div>
+            <div class="product-details">
+              <div class="product-top">
+                <div class="product-info">
+                  <h2 class="product-name">Apple Watch</h2>
+                  <p class="product-color">Blue</p>
+                </div>
+                <p class="product-price">$399.00</p>
+              </div>
+              <div class="product-bottom">
+                <span class="product-qty">x 1</span>
+                <button type="button" class="remove-btn" aria-label="Remove Apple Watch">
+                  <img src="resources/close-icon.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="product">
+            <div class="product-image">
+              <img src="resources/iMac.png" srcset="resources/iMac.png 1x, resources/iMac@2x.png 2x" alt="iMac Green" />
+            </div>
+            <div class="product-details">
+              <div class="product-top">
+                <div class="product-info">
+                  <h2 class="product-name">iMac</h2>
+                  <p class="product-color">Green</p>
+                </div>
+                <p class="product-price">$1199.00</p>
+              </div>
+              <div class="product-bottom">
+                <span class="product-qty">x 1</span>
+                <button type="button" class="remove-btn" aria-label="Remove iMac">
+                  <img src="resources/close-icon.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <hr class="divider" />
+
+        <form class="coupon-form" onsubmit="return false;">
+          <input type="text" name="coupon" placeholder="Enter coupon code" aria-label="Coupon code" class="coupon-input" />
+          <button type="submit" class="coupon-btn">Apply Coupon</button>
+        </form>
+
+        <div class="totals">
+          <div class="total-row">
+            <span>Sub total</span>
+            <span>$2597.00</span>
+          </div>
+          <div class="total-row">
+            <span>Tax</span>
+            <span>$623.28</span>
+          </div>
+          <div class="total-row total-final">
+            <span>Total</span>
+            <span>$3220.28</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact" aria-label="Contact information">
+        <h2 class="contact-title">Contact Information</h2>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="fullname">First &amp; Last name</label>
+            <input type="text" id="fullname" name="name" placeholder="Enter first &amp; last name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" name="country" required>
+                <option value="Finland" selected>Finland</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Germany">Germany</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="postal">Postal Code</label>
+              <input type="text" id="postal" name="postal" placeholder="00270" value="00270" required autocomplete="postal-code" />
+            </div>
+          </div>
+          <button type="submit" class="continue-btn">Continue</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="author-info">
+      Coded by <a href="#">Odinaka</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank" rel="noopener">devChallenges.io</a>.
+    </footer>
   </body>
 </html>
